@@ -8,22 +8,33 @@ abstract public class CargoShip implements IShip{
     private int width;
     private int height;
 
+    private String homePort;
+    private String cargo;
+    private String destination;
+
     private Engine engine;
     private boolean isSail;
 
 
-    public CargoShip(String name, String serialNumb, int displacement, int length, int width, int height, Engine engine) {
+    public CargoShip(String name, String serialNumb,
+                     int displacement, int length, int width, int height,
+                     String homePort, String cargo, String destination,
+                     Engine engine) {
         this.name = name;
         this.serialNumb = serialNumb;
         this.displacement = displacement;
         this.length = length;
         this.width = width;
         this.height = height;
+        this.homePort = homePort;
+        this.cargo = cargo;
+        this.destination = destination;
         this.engine = engine;
+        this.isSail = false;
     }
 
     public CargoShip(String name, String serialNumb, int displacement, int length, int width, int height,
-                   String enginePower, String engineVolume) {
+                     String enginePower, String engineVolume) {
         this.name = name;
         this.serialNumb = serialNumb;
         this.displacement = displacement;
@@ -99,11 +110,35 @@ abstract public class CargoShip implements IShip{
         }
     }
 
+    public String getHomePort() {
+        return homePort;
+    }
+
+    protected void setHomePort(String homePort) {
+        this.homePort = homePort;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    protected void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    protected void setDestination(String destination) {
+        this.destination = destination;
+    }
+
     public boolean isSail() {
         return isSail;
     }
 
-    public void setSail(boolean sail) {
+    protected void setSail(boolean sail) {
         isSail = sail;
     }
 
@@ -111,7 +146,7 @@ abstract public class CargoShip implements IShip{
         return name;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -119,7 +154,7 @@ abstract public class CargoShip implements IShip{
         return serialNumb;
     }
 
-    public void setSerialNumb(String serialNumb) {
+    protected void setSerialNumb(String serialNumb) {
         this.serialNumb = serialNumb;
     }
 
@@ -127,7 +162,7 @@ abstract public class CargoShip implements IShip{
         return displacement;
     }
 
-    public void setDisplacement(int displacement) {
+    protected void setDisplacement(int displacement) {
         this.displacement = displacement;
     }
 
@@ -135,7 +170,7 @@ abstract public class CargoShip implements IShip{
         return length;
     }
 
-    public void setLength(int length) {
+    protected void setLength(int length) {
         this.length = length;
     }
 
@@ -143,7 +178,7 @@ abstract public class CargoShip implements IShip{
         return width;
     }
 
-    public void setWidth(int width) {
+    protected void setWidth(int width) {
         this.width = width;
     }
 
@@ -151,7 +186,7 @@ abstract public class CargoShip implements IShip{
         return height;
     }
 
-    public void setHeight(int height) {
+    protected void setHeight(int height) {
         this.height = height;
     }
 
@@ -159,7 +194,7 @@ abstract public class CargoShip implements IShip{
         return engine;
     }
 
-    public void setEngine(Engine engine) {
+    protected void setEngine(Engine engine) {
         this.engine = engine;
     }
 
@@ -188,7 +223,11 @@ abstract public class CargoShip implements IShip{
                 ", length=" + length +
                 ", width=" + width +
                 ", height=" + height +
+                ", homePort='" + homePort + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", destination='" + destination + '\'' +
                 ", engine=" + engine +
+                ", isSail=" + isSail +
                 '}';
     }
 }
