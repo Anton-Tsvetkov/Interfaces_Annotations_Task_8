@@ -1,5 +1,6 @@
 abstract public class PublicTransport implements IVehicle {
 
+    String manufacturer;
     String vehModel;
     String routeNumb;
     String vehNumb;
@@ -8,17 +9,19 @@ abstract public class PublicTransport implements IVehicle {
     boolean onRoute;
     boolean moves;
 
-    public PublicTransport(String vehModel, String routeNumb, String vehNumb, int capacity) {
+    public PublicTransport(String manufacturer, String vehModel, String vehNumb, int capacity) {
+        this.manufacturer = manufacturer;
         this.vehModel = vehModel;
-        this.routeNumb = routeNumb;
         this.vehNumb = vehNumb;
         this.capacity = capacity;
         this.onRoute = false;
         this.moves = false;
     }
 
-    public PublicTransport(String vehModel, String vehNumb, int capacity) {
+    public PublicTransport(String manufacturer, String vehModel, String routeNumb, String vehNumb, int capacity) {
+        this.manufacturer = manufacturer;
         this.vehModel = vehModel;
+        this.routeNumb = routeNumb;
         this.vehNumb = vehNumb;
         this.capacity = capacity;
         this.onRoute = false;
@@ -72,6 +75,14 @@ abstract public class PublicTransport implements IVehicle {
         return moves;
     }
 
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
     @Override
     public void go() {
         this.moves = true;
@@ -85,7 +96,8 @@ abstract public class PublicTransport implements IVehicle {
     @Override
     public String toString() {
         return "PublicTransport{" +
-                "vehModel='" + vehModel + '\'' +
+                "manufacturer='" + manufacturer + '\'' +
+                ", vehModel='" + vehModel + '\'' +
                 ", routeNumb='" + routeNumb + '\'' +
                 ", vehNumb='" + vehNumb + '\'' +
                 ", capacity=" + capacity +

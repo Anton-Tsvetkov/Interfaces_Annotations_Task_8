@@ -3,14 +3,15 @@ public class Tram extends PublicTransport {
         super(vehModel, routeNumb, vehNumb, capacity);
     }
 
-    public Tram(String vehModel, String vehNumb, int capacity) {
-        super(vehModel, vehNumb, capacity);
+    public Tram(String manufacturer, String vehModel, String routeNumb, String vehNumb, int capacity) {
+        super(manufacturer, vehModel, routeNumb, vehNumb, capacity);
     }
 
     @Override
     public String toString() {
         return "Tram{" +
-                "vehModel='" + vehModel + '\'' +
+                "manufacturer='" + manufacturer + '\'' +
+                ", vehModel='" + vehModel + '\'' +
                 ", routeNumb='" + routeNumb + '\'' +
                 ", vehNumb='" + vehNumb + '\'' +
                 ", capacity=" + capacity +
