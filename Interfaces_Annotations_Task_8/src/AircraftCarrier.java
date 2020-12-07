@@ -23,8 +23,15 @@ public class AircraftCarrier extends WarShip {
         return aircrafts;
     }
 
-    public void setAircrafts(Aircraft[] aircrafts) {
+    protected void setAircrafts(Aircraft[] aircrafts) {
         this.aircrafts = aircrafts;
+    }
+
+    protected void planeToTakeOff(Aircraft aircraft, String location){
+        aircraft.planeToTakeOff(aircraft, location);
+    }
+    protected void retPlaneToAircraftCarrier(Aircraft aircraft, String location){
+        aircraft.retPlaneToAircraftCarrier(aircraft, location);
     }
 
     public class Aircraft {
@@ -50,11 +57,23 @@ public class AircraftCarrier extends WarShip {
             this.onBoard = onBoard;
         }
 
+
+        private void planeToTakeOff(Aircraft aircraft, String location){
+            aircraft.setOnBoard(false);
+            aircraft.setLocation(location);
+        }
+
+        private void retPlaneToAircraftCarrier(Aircraft aircraft, String location){
+            aircraft.setOnBoard(true);
+            aircraft.setLocation(location);
+        }
+
+
         public String getLocation() {
             return location;
         }
 
-        public void setLocation(String location) {
+        protected void setLocation(String location) {
             this.location = location;
         }
 
@@ -62,7 +81,7 @@ public class AircraftCarrier extends WarShip {
             return onBoard;
         }
 
-        public void setOnBoard(boolean onBoard) {
+        protected void setOnBoard(boolean onBoard) {
             this.onBoard = onBoard;
         }
 
@@ -70,7 +89,7 @@ public class AircraftCarrier extends WarShip {
             return type;
         }
 
-        public void setType(String type) {
+        protected void setType(String type) {
             this.type = type;
         }
 
@@ -78,7 +97,7 @@ public class AircraftCarrier extends WarShip {
             return weight;
         }
 
-        public void setWeight(int weight) {
+        protected void setWeight(int weight) {
             this.weight = weight;
         }
 
@@ -86,7 +105,7 @@ public class AircraftCarrier extends WarShip {
             return length;
         }
 
-        public void setLength(int length) {
+        protected void setLength(int length) {
             this.length = length;
         }
 
@@ -94,7 +113,7 @@ public class AircraftCarrier extends WarShip {
             return width;
         }
 
-        public void setWidth(int width) {
+        protected void setWidth(int width) {
             this.width = width;
         }
 
@@ -102,7 +121,7 @@ public class AircraftCarrier extends WarShip {
             return height;
         }
 
-        public void setHeight(int height) {
+        protected void setHeight(int height) {
             this.height = height;
         }
 
