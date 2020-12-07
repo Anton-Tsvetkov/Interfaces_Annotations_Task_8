@@ -2,6 +2,7 @@ abstract public class WarShip implements IShip{
 
     private String name;
     private String serialNumb;
+    private String homePort;
 
     private int displacement;
     private int length;
@@ -12,26 +13,18 @@ abstract public class WarShip implements IShip{
     private boolean isSail;
 
 
-    public WarShip(String name, String serialNumb, int displacement, int length, int width, int height, Engine engine) {
+    public WarShip(String name, String serialNumb, String homePort, int displacement, int length, int width, int height, Engine engine) {
         this.name = name;
         this.serialNumb = serialNumb;
+        this.homePort = homePort;
         this.displacement = displacement;
         this.length = length;
         this.width = width;
         this.height = height;
         this.engine = engine;
+        this.isSail = false;
     }
 
-    public WarShip(String name, String serialNumb, int displacement, int length, int width, int height,
-                   String enginePower, String engineVolume) {
-        this.name = name;
-        this.serialNumb = serialNumb;
-        this.displacement = displacement;
-        this.length = length;
-        this.width = width;
-        this.height = height;
-        this.engine = new Engine(enginePower, engineVolume);
-    }
 
     public class Engine {
 
@@ -103,7 +96,7 @@ abstract public class WarShip implements IShip{
         return isSail;
     }
 
-    public void setSail(boolean sail) {
+    protected void setSail(boolean sail) {
         isSail = sail;
     }
 
@@ -111,7 +104,7 @@ abstract public class WarShip implements IShip{
         return name;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -119,7 +112,7 @@ abstract public class WarShip implements IShip{
         return serialNumb;
     }
 
-    public void setSerialNumb(String serialNumb) {
+    protected void setSerialNumb(String serialNumb) {
         this.serialNumb = serialNumb;
     }
 
@@ -127,7 +120,7 @@ abstract public class WarShip implements IShip{
         return displacement;
     }
 
-    public void setDisplacement(int displacement) {
+    protected void setDisplacement(int displacement) {
         this.displacement = displacement;
     }
 
@@ -135,7 +128,7 @@ abstract public class WarShip implements IShip{
         return length;
     }
 
-    public void setLength(int length) {
+    protected void setLength(int length) {
         this.length = length;
     }
 
@@ -143,7 +136,7 @@ abstract public class WarShip implements IShip{
         return width;
     }
 
-    public void setWidth(int width) {
+    protected void setWidth(int width) {
         this.width = width;
     }
 
@@ -151,7 +144,7 @@ abstract public class WarShip implements IShip{
         return height;
     }
 
-    public void setHeight(int height) {
+    protected void setHeight(int height) {
         this.height = height;
     }
 
@@ -159,8 +152,16 @@ abstract public class WarShip implements IShip{
         return engine;
     }
 
-    public void setEngine(Engine engine) {
+    protected void setEngine(Engine engine) {
         this.engine = engine;
+    }
+
+    protected String getHomePort() {
+        return homePort;
+    }
+
+    public void setHomePort(String homePort) {
+        this.homePort = homePort;
     }
 
     @Override

@@ -1,36 +1,21 @@
 import java.util.Arrays;
 
-public class AircraftCarrier extends WarShip{
+public class AircraftCarrier extends WarShip {
 
 
     Aircraft[] aircrafts;
 
 
-
-    public AircraftCarrier(String name, String serialNumb,
+    public AircraftCarrier(String name, String serialNumb, String homePort,
                            int displacement, int length, int width, int height,
                            Engine engine) {
-        super(name, serialNumb, displacement, length, width, height, engine);
+        super(name, serialNumb, homePort, displacement, length, width, height, engine);
     }
 
-    public AircraftCarrier(String name, String serialNumb,
-                           int displacement, int length, int width, int height,
-                           String enginePower, String engineVolume) {
-        super(name, serialNumb, displacement, length, width, height, enginePower, engineVolume);
-    }
-
-    public AircraftCarrier(String name, String serialNumb,
+    public AircraftCarrier(String name, String serialNumb, String homePort,
                            int displacement, int length, int width, int height,
                            Engine engine, Aircraft[] aircrafts) {
-        super(name, serialNumb, displacement, length, width, height, engine);
-        this.aircrafts = aircrafts;
-    }
-
-    public AircraftCarrier(String name, String serialNumb,
-                           int displacement, int length, int width, int height,
-                           String enginePower, String engineVolume,
-                           Aircraft[] aircrafts) {
-        super(name, serialNumb, displacement, length, width, height, enginePower, engineVolume);
+        super(name, serialNumb, homePort, displacement, length, width, height, engine);
         this.aircrafts = aircrafts;
     }
 
@@ -42,7 +27,7 @@ public class AircraftCarrier extends WarShip{
         this.aircrafts = aircrafts;
     }
 
-    public class Aircraft{
+    public class Aircraft {
 
         private String type;
         private String location;
