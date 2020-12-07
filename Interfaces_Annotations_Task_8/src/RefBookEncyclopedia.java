@@ -1,12 +1,14 @@
-public class RefBookEncyclopedia extends PopularScienceBook{
+public class RefBookEncyclopedia extends Book {
+
+    String subjectArea;
 
     boolean encyclopedia;
     boolean referencesBook;
 
-    public RefBookEncyclopedia(boolean encyclopedia, String subjectArea, String title, String author, int pagesQuantity) {
-        super(subjectArea, title, author, pagesQuantity);
+    public RefBookEncyclopedia(String title, String author, int pagesQuantity, String subjectArea, boolean encyclopedia) {
+        super(title, author, pagesQuantity);
+        this.subjectArea = subjectArea;
         this.encyclopedia = encyclopedia;
-        this.referencesBook = !encyclopedia;
     }
 
     public boolean isRefBook(){
@@ -35,9 +37,9 @@ public class RefBookEncyclopedia extends PopularScienceBook{
     @Override
     public String toString() {
         return "RefBookEncyclopedia{" +
-                "encyclopedia=" + encyclopedia +
+                "subjectArea='" + subjectArea + '\'' +
+                ", encyclopedia=" + encyclopedia +
                 ", referencesBook=" + referencesBook +
-                ", subjectArea='" + subjectArea + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", pagesQuantity=" + pagesQuantity +

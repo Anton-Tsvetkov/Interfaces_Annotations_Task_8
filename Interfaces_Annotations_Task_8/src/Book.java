@@ -1,14 +1,32 @@
-public class Book extends Edition{
+public abstract class Book implements IEdition{
 
     String title;
     String author;
     int pagesQuantity;
 
+    int year;
+    int editionNumb;
 
     public Book(String title, String author, int pagesQuantity) {
         this.title = title;
         this.author = author;
         this.pagesQuantity = pagesQuantity;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getEditionNumb() {
+        return editionNumb;
+    }
+
+    public void setEditionNumb(int editionNumb) {
+        this.editionNumb = editionNumb;
     }
 
     public String getTitle() {
@@ -33,6 +51,12 @@ public class Book extends Edition{
 
     public void setPagesQuantity(int pagesQuantity) {
         this.pagesQuantity = pagesQuantity;
+    }
+
+    @Override
+    public void release(int year, int editionNumb) {
+        this.year = year;
+        this.editionNumb = editionNumb;
     }
 
     @Override
