@@ -12,7 +12,7 @@ public class VideoPlayer extends Player {
     @Override
     public String toString() {
         return "VideoPlayer{" +
-                "mark='" + mark + '\'' +
+                "manufacturer='" + manufacturer + '\'' +
                 ", model='" + model + '\'' +
                 ", serialNumb='" + serialNumb + '\'' +
                 ", color='" + color + '\'' +

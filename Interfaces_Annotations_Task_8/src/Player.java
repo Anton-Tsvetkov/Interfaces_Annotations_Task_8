@@ -2,7 +2,7 @@ import java.util.List;
 
 abstract public class Player implements  ITechnics {
 
-    String mark;
+    String manufacturer;
     String model;
     String serialNumb;
     String color;
@@ -11,8 +11,8 @@ abstract public class Player implements  ITechnics {
 
     List<Object> recordingsList;
 
-    public Player(String mark, String model, String serialNumb, String color, List<Object> recordingsList) {
-        this.mark = mark;
+    public Player(String manufacturer, String model, String serialNumb, String color, List<Object> recordingsList) {
+        this.manufacturer = manufacturer;
         this.model = model;
         this.serialNumb = serialNumb;
         this.color = color;
@@ -20,20 +20,20 @@ abstract public class Player implements  ITechnics {
         this.power = false;
     }
 
-    public Player(String mark, String model, String serialNumb, String color) {
-        this.mark = mark;
+    public Player(String manufacturer, String model, String serialNumb, String color) {
+        this.manufacturer = manufacturer;
         this.model = model;
         this.serialNumb = serialNumb;
         this.color = color;
         this.power = false;
     }
 
-    public String getMark() {
-        return mark;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setMark(String mark) {
-        this.mark = mark;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public String getModel() {
@@ -97,5 +97,17 @@ abstract public class Player implements  ITechnics {
             }
         }
         return "Object not found";
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "manufacturer='" + manufacturer + '\'' +
+                ", model='" + model + '\'' +
+                ", serialNumb='" + serialNumb + '\'' +
+                ", color='" + color + '\'' +
+                ", power=" + power +
+                ", recordingsList=" + recordingsList +
+                '}';
     }
 }
