@@ -6,12 +6,24 @@ abstract public class Engineer implements IEmployee{
 
     boolean atWork;
 
+    protected String phoneNumb;
+    protected String email;
+
     private String medicalInsuranceNumb;
     private String salaryCardNumb;
 
     public Engineer(String name, String subjArea, int experience) {
         this.name = name;
         this.subjArea = subjArea;
+        this.experience = experience;
+        atWork = false;
+    }
+
+    public Engineer(String name, String subjArea, String phoneNumb, String email, int experience) {
+        this.name = name;
+        this.subjArea = subjArea;
+        this.phoneNumb = phoneNumb;
+        this.email = email;
         this.experience = experience;
         atWork = false;
     }
@@ -50,6 +62,21 @@ abstract public class Engineer implements IEmployee{
 
 
 
+    protected String getPhoneNumb() {
+        return phoneNumb;
+    }
+
+    protected void setPhoneNumb(String phoneNumb) {
+        this.phoneNumb = phoneNumb;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    protected void setEmail(String email) {
+        this.email = email;
+    }
 
     protected String getMedicalInsuranceNumb() {
         return medicalInsuranceNumb;
@@ -88,6 +115,8 @@ abstract public class Engineer implements IEmployee{
                 ", subjArea='" + subjArea + '\'' +
                 ", experience=" + experience +
                 ", atWork=" + atWork +
+                ", phoneNumb='" + phoneNumb + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

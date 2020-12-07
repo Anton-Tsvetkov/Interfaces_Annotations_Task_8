@@ -7,6 +7,11 @@ public class Manager extends Engineer{
         this.departmentLed = departmentLed;
     }
 
+    public Manager(String name, String subjArea, String phoneNumb, String email, int experience, String departmentLed) {
+        super(name, subjArea, phoneNumb, email, experience);
+        this.departmentLed = departmentLed;
+    }
+
     @Override
     public String toString() {
         return "Manager{" +
@@ -15,6 +20,8 @@ public class Manager extends Engineer{
                 ", subjArea='" + subjArea + '\'' +
                 ", experience=" + experience +
                 ", atWork=" + atWork +
+                ", phoneNumb='" + phoneNumb + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
